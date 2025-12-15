@@ -1,0 +1,159 @@
+/* Global Header */
+.amazon-header {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========== UPPER HEADER ========== */
+.header-top {
+  background-color: #131921;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff9900;
+  cursor: pointer;
+}
+
+.logo:hover {
+  text-shadow: 0 0 6px rgba(255, 153, 0, 0.6);
+}
+
+/* Location */
+.location {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.bold-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  flex: 1;
+  max-width: 650px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.search-select {
+  border: none;
+  padding: 10px;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  outline: none;
+}
+
+.search-btn {
+  background-color: #febd69;
+  border: none;
+  padding: 0 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #f3a847;
+}
+
+/* Account & Orders */
+.account,
+.orders {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.account:hover,
+.orders:hover {
+  outline: 1px solid white;
+  padding: 4px;
+}
+
+/* Cart */
+.cart {
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cart:hover {
+  color: #ff9900;
+}
+
+/* ========== LOWER HEADER ========== */
+.header-bottom {
+  background-color: #232f3e;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+/* Menu */
+.menu {
+  font-weight: bold;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.menu:hover {
+  outline: 1px solid white;
+  padding: 4px;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .search-box {
+    max-width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}

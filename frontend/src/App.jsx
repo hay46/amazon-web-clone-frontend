@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './component/header/Header'
-import Footer from './component/footer/Footer'
+import Header from './component/common/Header/Header'
+import Footer from './component/common/footer/Footer'
 function App() {
   return (
     <div>
