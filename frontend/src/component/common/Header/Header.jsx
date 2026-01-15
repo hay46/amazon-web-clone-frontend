@@ -1,54 +1,60 @@
-import React from "react";
-import './Header.css';
-
-const Header = () => {
+import React from 'react'
+import "Header.css"
+function Header() {
   return (
-    <header className="amazon-header">
-      {/* Upper Header */}
-      <div className="header-top">
-        <div className="logo">amazon</div>
-
-        <div className="location">
-          <span className="small-text">Deliver to</span>
-          <span className="bold-text">Ethiopia</span>
+    <>
+      <section className="amazon-logo">
+        <div>
+          <img
+            src="https://icons8.com/icon/yzEFHZ6FdT4P/amazon"
+            alt=""
+            className="amzon-icon"
+          />
         </div>
-
-        <div className="search-box">
-          <select className="search-select">
-            <option>All</option>
-            <option>Electronics</option>
-            <option>Books</option>
-          </select>
-          <input type="text" placeholder="Search Amazon" />
-          <button className="search-btn">🔍</button>
+      </section>
+      <section className="loction-delivery-ethiopia-amazon">
+        <div>
+          <h2 className="delivery-to-ethiopia">delivery to</h2>
+          <div className="delivery-ethiopaia-for-amazon">
+            <img
+              src="https://www.123rf.com/photo_247501070_map-location-pin-line-icon-geolocation-navigation-and-gps-tracking-outline-symbol-travel-and.html"
+              alt=""
+            />
+            <h1 className="ethiooian-delivery">Ethiopia</h1>
+          </div>
         </div>
-
-        <div className="account">
-          <span className="small-text">Hello, Sign in</span>
-          <span className="bold-text">Account & Lists</span>
-        </div>
-
-        <div className="orders">
-          <span className="small-text">Returns</span>
-          <span className="bold-text">& Orders</span>
-        </div>
-
-        <div className="cart">🛒 Cart</div>
-      </div>
-
-      {/* Lower Header */}
-      <div className="header-bottom">
-        <div className="menu">☰ All</div>
-        <ul className="nav-links">
-          <li>Today's Deals</li>
-          <li>Customer Service</li>
-          <li>Registry</li>
-          <li>Gift Cards</li>
-          <li>Sell</li>
-        </ul>
-      </div>
-    </header>
+      </section>
+      <section className="All-department">
+    
+        <label for="department">All</label>
+        <select Id="department" className="All-choose-department">
+          <option value="All Department">All Department</option>
+          <option value="Arts & Crafts">Arts & Crafts</option>
+          <option value="Automotive">Automotive</option>
+          <option value="Baby">Baby</option>
+          <option value="butiy & Prsonal Care">butiy & Prsonal Care</option>
+          <option value="Books">Books</option>
+          <option value="Boys' Fastion">Boys' Fastion</option>
+          <option value="Computers">Computers</option>
+          <option value="Deals">Deals</option>
+          <option value="Digital Music">Digital Music</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Grils Fashion">Grils Fashion </option>
+          <option value="Health & household">Health & household</option>
+          <option value="Home & Kichen">Home & Kichen</option>
+          <option value="Indestrial & scientific">
+            Indestrial & scientific
+          </option>
+          <option value="Kindle store">Kindle store</option>
+          <option value="Lunguge">Lunguge</option>
+          <option value="Mens' Fashion ">Mens' Fashion </option>
+          <option value="Movies & TV">Movies & TV</option>
+          <option value="Deals">Musics, CDs & Vinyl</option>
+        </select>
+      </section>
+      <section></section>
+    </>
   );
-};
+}
 
-export default Header;
+export default Header
