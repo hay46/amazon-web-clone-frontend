@@ -1,159 +1,272 @@
-/* Global Header */
-.amazon-header {
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Header.css */
 
-/* ========== UPPER HEADER ========== */
-.header-top {
-  background-color: #131921;
-  color: #ffffff;
+/* Main header container - you'll need to wrap your sections in this */
+.amazon-header-container {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 10px 20px;
+  background-color: #131921;
+  padding: 0.5rem 1rem;
+  color: white;
+  min-height: 60px;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-/* Logo */
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #ff9900;
-  cursor: pointer;
-}
-
-.logo:hover {
-  text-shadow: 0 0 6px rgba(255, 153, 0, 0.6);
-}
-
-/* Location */
-.location {
+/* Amazon Logo Section */
+.amazon-logo {
   display: flex;
-  flex-direction: column;
-  cursor: pointer;
+  align-items: center;
 }
 
-.small-text {
-  font-size: 12px;
+.amazon-logo img.amzon-icon {
+  width: 100px;
+  height: auto;
+  padding-top: 10px;
+  object-fit: contain;
+}
+
+.amazon-logo a:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+/* Location/Delivery Section */
+.loction-delivery-ethiopia-amazon {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.delivery-to-ethiopia {
+  font-size: 0.75rem;
   color: #cccccc;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1;
 }
 
-.bold-text {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Search Box */
-.search-box {
+.delivery-ethiopaia-for-amazon {
   display: flex;
-  flex: 1;
-  max-width: 650px;
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: white;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.search-select {
-  border: none;
-  padding: 10px;
-  background-color: #f3f3f3;
+.delivery-ethiopaia-for-amazon h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.delivery-ethiopaia-for-amazon h1.ethiooian-delivery {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.loction-delivery-ethiopia-amazon:hover {
+  border: 1px solid white;
+  border-radius: 3px;
   cursor: pointer;
 }
 
-.search-box input {
+/* Search/Department Section */
+.All-department {
+  flex: 1;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+.the-all-departement-and-the-input {
+  display: flex;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.All-choose-department {
+  background-color: #f3f3f3;
+  border: none;
+  border-right: 1px solid #cdcdcd;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  color: #555;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  cursor: pointer;
+  width: 50px;
+  min-width: 50px;
+}
+
+.input-search-Amazon- {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.input-search-amazon {
   flex: 1;
   border: none;
-  padding: 10px;
-  font-size: 14px;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.search-box input:focus {
-  outline: none;
+.input-search-amazon:focus {
+  outline: 3px solid #ff9900;
+  outline-offset: -3px;
 }
 
-.search-btn {
+.search-icon-button {
   background-color: #febd69;
   border: none;
-  padding: 0 18px;
-  font-size: 16px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
-.search-btn:hover {
+.search-icon-button:hover {
   background-color: #f3a847;
 }
 
-/* Account & Orders */
-.account,
-.orders {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.account:hover,
-.orders:hover {
-  outline: 1px solid white;
-  padding: 4px;
-}
-
-/* Cart */
-.cart {
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.cart:hover {
-  color: #ff9900;
-}
-
-/* ========== LOWER HEADER ========== */
-.header-bottom {
-  background-color: #232f3e;
-  color: white;
+.search-icon-button h2 {
+  margin: 0;
   display: flex;
   align-items: center;
-  padding: 8px 20px;
+  justify-content: center;
+  color: #131921;
+  font-size: 1.25rem;
 }
 
-/* Menu */
-.menu {
-  font-weight: bold;
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-.menu:hover {
-  outline: 1px solid white;
-  padding: 4px;
-}
-
-/* Navigation Links */
-.nav-links {
-  list-style: none;
+/* Language Option Section */
+.languge-option {
   display: flex;
-  gap: 18px;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem;
 }
 
-.nav-links li {
+.languge-option > a {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.25rem;
+}
+
+.languge-opration {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.language-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  color: black;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 1rem;
+  margin-top: 0.25rem;
+}
+
+.languge-option:hover .language-dropdown-menu {
+  display: block;
+}
+
+.languge-option:hover {
+  border: 1px solid white;
+  border-radius: 3px;
   cursor: pointer;
-  font-size: 14px;
 }
 
-.nav-links li:hover {
-  text-decoration: underline;
+.dropdown-item {
+  padding: 0.5rem 0;
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 900px) {
-  .search-box {
-    max-width: 100%;
+.dropdown-item select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.language-list option {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.language-list li {
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-list input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .amazon-header-container {
+    gap: 1rem;
   }
+  
+  .All-department {
+    min-width: 250px;
+  }
+}
 
-  .nav-links {
+@media (max-width: 768px) {
+  .amazon-header-container {
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  
+  .loction-delivery-ethiopia-amazon,
+  .languge-option {
     display: none;
+  }
+  
+  .All-department {
+    flex: 1;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .amazon-logo img.amzon-icon {
+    width: 80px;
+  }
+  
+  .All-department {
+    min-width: 200px;
+  }
+  
+  .All-choose-department {
+    width: 40px;
+    min-width: 40px;
+    font-size: 0.7rem;
+    padding: 0 0.5rem;
   }
 }
