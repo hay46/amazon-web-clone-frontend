@@ -33,7 +33,7 @@ function Header() {
       <section className="All-department">
         <div className="the-all-departement-and-the-input">
           <select id="department" className="All-choose-department">
-            <option value="All Departments">All Departments</option>
+            <option value="All Departments"> All Departments</option>
             <option value="Arts & Crafts">Arts & Crafts</option>
             <option value="Automotive">Automotive</option>
             <option value="Baby">Baby</option>
@@ -95,6 +95,45 @@ function Header() {
           </div>
         </div>
       </section>
+      <div className="signup-and-accont-page">
+        <label htmlFor="language">
+          <h1 className="Hello">Hello,sign in</h1>
+          <br />
+          <h1 className="Account">Account & list </h1>
+        </label>
+        <select id="Account-list" className="language">
+          <option value="Sign in "></option>
+          <h2>
+            New customer?
+            <a href="stars here">stars here</a>
+          </h2>
+          <option value="your a list ">your a list </option>
+          <option value="Create a list">Create a list</option>
+          <option value="find">find the list of Register</option>
+          <div className="Your-account">
+            <option value="gt ">
+              <a href="Account">Account</a>
+            </option>
+            <option value="or">
+              <a href="">order</a>
+            </option>
+            <option value="Recom">
+              <a href="Recomen"></a>Recomendation
+            </option>
+            <option value="ht">
+              <a href="">your shope</a>
+            </option>
+          </div>
+        </select>
+      </div>
+      <a href="">
+        <div className="returns-order-that">
+          <h1>Return & orderd</h1>
+        </div>
+        <div className='cart-methode'>
+
+        </div>
+      </a>
     </div>
   );
 }
