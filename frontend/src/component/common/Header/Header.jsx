@@ -1,176 +1,220 @@
-// import React from 'react'
-// import './Header.css'
-// import { CiSearch } from "react-icons/ci"
-// import { IoLocationOutline } from "react-icons/io5"
-// //import { HiSelector } from "react-icons/hi";
-// function Header() {
-//   return (
-//     <div className="amazon-header-container">
-//       <section className="amazon-logo">
-//         <div>
-//           <a href="">
-//             <img
-//               src="https://img.icons8.com/color/48/amazon.png"
-//               alt=""
-//               className="amzon-icon"
-//             />
-//           </a>
-//         </div>
-//       </section>
-//       <section className="loction-delivery-ethiopia-amazon">
-//         <div>
-//           <h2 className="delivery-to-ethiopia">delivery to</h2>
-//           <div className="delivery-ethiopaia-for-amazon">
-//             <h3>
-//               <IoLocationOutline />
-//             </h3>
+import React, { useState } from "react";
+import "./Header.css";
 
-//             <h1 className="ethiooian-delivery">Ethiopia</h1>
-//           </div>
-//         </div>
-//       </section>
-
-//       <section className="All-department">
-//         <div className="the-all-departement-and-the-input">
-//           <select id="department" className="All-choose-department">
-//             <option value="All Departments"> All Departments</option>
-//             <option value="Arts & Crafts">Arts & Crafts</option>
-//             <option value="Automotive">Automotive</option>
-//             <option value="Baby">Baby</option>
-//             <option value="butiy & Prsonal Care">butiy & Prsonal Care</option>
-//             <option value="Books">Books</option>
-//             <option value="Boys' Fastion">Boys' Fastion</option>
-//             <option value="Computers">Computers</option>
-//             <option value="Deals">Deals</option>
-//             <option value="Digital Music">Digital Music</option>
-//             <option value="Electronics">Electronics</option>
-//             <option value="Grils Fashion">Grils Fashion </option>
-//             <option value="Health & household">Health & household</option>
-//             <option value="Home & Kichen">Home & Kichen</option>
-//             <option value="Indestrial & scientific">
-//               Indestrial & scientific
-//             </option>
-//             <option value="Kindle store">Kindle store</option>
-//             <option value="Lunguge">Lunguge</option>
-//             <option value="Mens' Fashion ">Mens' Fashion </option>
-//             <option value="Movies & TV">Movies & TV</option>
-//             <option value="Deals">Musics, CDs & Vinyl</option>
-//           </select>
-//           <div className="input-search-Amazon-">
-//             <input
-//               className="input-search-amazon"
-//               type="search"
-//               placeholder="Search Amazon..."
-//             />
-//             {/* The Search Button with Icon */}
-//             <button type="submit" className="search-icon-button">
-//               <h2>
-//                 <CiSearch />
-//               </h2>
-//             </button>
-//           </div>
-//         </div>
-//       </section>
-//       <section className="languge-option">
-//         <a href="/">
-//           <img
-//             src="https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg"
-//             alt="ethiopia"
-//             className="flag-icon"
-//           />
-//           <span className="languge-opration">AM</span>
-//         </a>
-
-//         <div className="language-dropdown-menu">
-//           <div className="dropdown-item">
-//             <label htmlFor="language-select">Choose a language:</label>
-//             <select id="language-select" className="language-select">
-//               <option value="en">English - EN</option>
-//               <option value="am" selected>
-//                 Amharic - AM
-//               </option>
-//               <option value="om">Oromigna - OM</option>
-//               <option value="ti">Tigragna - TI</option>
-//             </select>
-//           </div>
-//         </div>
-//       </section>
-//       <div className="signup-and-accont-page">
-//         <label htmlFor="language">
-//           <h1 className="Hello">Hello,sign in</h1>
-//           <br />
-//           <h1 className="Account">Account & list </h1>
-//         </label>
-//         <select id="Account-list" className="language">
-//           <option value="Sign in "></option>
-//           <h2>
-//             New customer?
-//             <a href="stars here">stars here</a>
-//           </h2>
-//           <option value="your a list ">your a list </option>
-//           <option value="Create a list">Create a list</option>
-//           <option value="find">find the list of Register</option>
-//           <div className="Your-account">
-//             <option value="gt ">
-//               <a href="Account">Account</a>
-//             </option>
-//             <option value="or">
-//               <a href="">order</a>
-//             </option>
-//             <option value="Recom">
-//               <a href="Recomen"></a>Recomendation
-//             </option>
-//             <option value="ht">
-//               <a href="">your shope</a>
-//             </option>
-//           </div>
-//         </select>
-//       </div>
-//       <a href="">
-//         <div className="returns-order-that">
-//           <h1>Return & orderd</h1>
-//         </div>
-//         <div className='cart-methode'>
-
-//         </div>
-//       </a>
-//     </div>
-//   );
-// }
-
-// export default Header
-
-
-
-
-
-import React, { useState } from 'react';
-import './Header.css'; // We'll create this CSS file
-
-const AmazonHeader = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+const AmazonHeader = ({
+  // Props for data from backend/fetching methods
+  user = null, // { name: 'User', email: 'user@example.com' }
+  cartItems = [],
+  recentOrders = [],
+  todaysDeals = [],
+  countries = [],
+  selectedCountry = "US",
+  onSearch,
+  onSignIn,
+  onSignOut,
+  //onCountryChange,
+  onTrackPackage,
+  onViewOrderHistory,
+  onViewCart,
+  // Configuration
+  enableLanguageSelector = true,
+  enableOrderTracking = true,
+  enablePrimeFeatures = true,
+  currentDate = new Date(),
+}) => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [showAccountMenu, setShowAccountMenu] = useState(false);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const [showAllMenu, setShowAllMenu] = useState(false);
+
+  // Default countries if not provided
+  const defaultCountries = [
+    {
+      code: "US",
+      name: "United States",
+      flag: "🇺🇸",
+      currency: "USD",
+      domain: "amazon.com",
+    },
+    {
+      code: "IN",
+      name: "India",
+      flag: "🇮🇳",
+      currency: "INR",
+      domain: "amazon.in",
+    },
+    {
+      code: "UK",
+      name: "United Kingdom",
+      flag: "🇬🇧",
+      currency: "GBP",
+      domain: "amazon.co.uk",
+    },
+    {
+      code: "CA",
+      name: "Canada",
+      flag: "🇨🇦",
+      currency: "CAD",
+      domain: "amazon.ca",
+    },
+  ];
+
+  const displayCountries = countries.length > 0 ? countries : defaultCountries;
+
+  // Calculate cart count from cartItems
+  const cartCount = cartItems.reduce(
+    (total, item) => total + (item.quantity || 1),
+    0,
+  );
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      console.log('Searching for:', searchQuery);
-      // Implement actual search functionality here
+      if (onSearch) {
+        onSearch(searchQuery);
+      } else {
+        // Fallback behavior
+        console.log(`Searching for: ${searchQuery}`);
+        window.location.href = `/s?k=${encodeURIComponent(searchQuery)}`;
+      }
     }
   };
 
+  const handleSignIn = () => {
+    if (onSignIn) {
+      onSignIn();
+    } else {
+      // Fallback behavior
+      setShowAccountMenu(false);
+      alert("Sign In functionality would open here");
+    }
+  };
+
+  const handleSignOut = () => {
+    if (onSignOut) {
+      onSignOut();
+    } else {
+      // Fallback behavior
+      setShowAccountMenu(false);
+      alert("Signed out successfully");
+    }
+  };
+
+  // const handleCountrySelect = (countryCode) => {
+  //   if (onCountryChange) {
+  //     onCountryChange(countryCode);
+  //   } else {
+  //     // Fallback behavior
+  //     setSelectedCountry(countryCode);
+  //     const country = displayCountries.find((c) => c.code === countryCode);
+  //     if (country) {
+  //       alert(`Redirecting to ${country.name} Amazon (${country.domain})`);
+  //     }
+  //   }
+  //   setShowLanguageMenu(false);
+  // };
+
+  const handleTrackPackage = () => {
+    if (onTrackPackage) {
+      onTrackPackage();
+    } else {
+      alert("Opening package tracking...");
+    }
+  };
+
+  const handleViewOrderHistory = () => {
+    if (onViewOrderHistory) {
+      onViewOrderHistory();
+    } else {
+      alert("Opening order history...");
+    }
+  };
+
+  const handleViewCart = () => {
+    if (onViewCart) {
+      onViewCart();
+    } else {
+      window.location.href = "/cart";
+    }
+  };
+
+  // Get greeting based on time of day
+  const getGreeting = () => {
+    const hour = currentDate.getHours();
+    if (hour < 12) return "Good morning";
+    if (hour < 18) return "Good afternoon";
+    return "Good evening";
+  };
+
+  // Format date
+  const getFormattedDate = () => {
+    return currentDate.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  // Account menu items based on user status
+  const accountMenuItems = user
+    ? [
+        {
+          label: "Your Account",
+          action: () => (window.location.href = "/account"),
+        },
+        { label: "Your Orders", action: handleViewOrderHistory },
+        { label: "Track Package", action: handleTrackPackage },
+        {
+          label: "Your Wish List",
+          action: () => (window.location.href = "/wishlist"),
+        },
+        {
+          label: "Your Recommendations",
+          action: () => (window.location.href = "/recommendations"),
+        },
+        {
+          label: "Manage Prime",
+          action: () => (window.location.href = "/prime"),
+        },
+        { label: "Sign Out", action: handleSignOut, isSignOut: true },
+      ]
+    : [
+        { label: "Sign in", action: handleSignIn, isSignIn: true },
+        {
+          label: "New customer? Start here.",
+          action: () => (window.location.href = "/register"),
+        },
+      ];
+
+  // Navigation categories
   const categories = [
-    'All',
-    'Amazon Basics',
-    'Best Sellers',
-    'New Releases',
-    'Today\'s Deals',
-    'Customer Service',
-    'Prime',
-    'Books',
-    'Fashion',
-    'Electronics',
-    'Home & Kitchen'
+    "All",
+    "Amazon Basics",
+    "Best Sellers",
+    "New Releases",
+    "Today's Deals",
+    "Customer Service",
+    "Prime Video",
+    "Amazon Music",
+    "Books",
+    "Fashion",
+    "Electronics",
+    "Home & Kitchen",
+    "Computers",
+    "Smart Home",
+    "Toys & Games",
+  ];
+
+  // Main navigation items
+  const navItems = [
+    "Today's Deals",
+    "Customer Service",
+    "Registry",
+    "Gift Cards",
+    "Sell",
+    "Coupons",
+    "Health & Household",
   ];
 
   return (
@@ -184,14 +228,14 @@ const AmazonHeader = () => {
               <span className="logo-domain">.com</span>
             </a>
           </div>
-          
+
           <div className="location-container">
             <div className="location-icon">
               <i className="location-pin"></i>
             </div>
             <div className="location-text">
-              <div className="deliver-to">Deliver to</div>
-              <div className="country">United States</div>
+              <div className="deliver-to">{getGreeting()}</div>
+              <div className="country">Select your address</div>
             </div>
           </div>
         </div>
@@ -202,7 +246,9 @@ const AmazonHeader = () => {
               <select className="category-select">
                 <option>All Departments</option>
                 {categories.map((cat, index) => (
-                  <option key={index} value={cat}>{cat}</option>
+                  <option key={index} value={cat}>
+                    {cat}
+                  </option>
                 ))}
               </select>
             </div>
@@ -220,51 +266,184 @@ const AmazonHeader = () => {
         </div>
 
         <div className="header-right">
-          <div className="header-item language">
-            <div className="flag-icon">🇺🇸</div>
-            <div className="language-text">EN</div>
-          </div>
+          {/* Language/Country Selector */}
+          {enableLanguageSelector && (
+            <div
+              className="header-item language-selector"
+              onMouseEnter={() => setShowLanguageMenu(true)}
+              onMouseLeave={() => setShowLanguageMenu(false)}
+            >
+              <div className="language-content">
+                <div className="flag-icon">
+                  {displayCountries.find((c) => c.code === selectedCountry)
+                    ?.flag || "🇺🇸"}
+                </div>
+                <div className="language-text">EN</div>
+                <i className="dropdown-arrow">▼</i>
+              </div>
 
-          <div className="header-item account" 
-               onMouseEnter={() => setShowAccountMenu(true)}
-               onMouseLeave={() => setShowAccountMenu(false)}>
+              {showLanguageMenu && (
+                <div className="language-menu">
+                  <div className="menu-header">
+                    <h3>Change language & currency</h3>
+                    <p>
+                      Choose your preferred language and currency for shopping.
+                    </p>
+                  </div>
+                  <div className="countries-list">
+                    {displayCountries.map((country) => (
+                      <div
+                        key={country.code}
+                        className={`country-item ${selectedCountry === country.code ? "selected" : ""}`}
+                        // onClick={() => handleCountrySelect(country.code)}
+                      >
+                        <div className="country-flag">{country.flag}</div>
+                        <div className="country-info">
+                          <div className="country-name">{country.name}</div>
+                          <div className="country-domain">{country.domain}</div>
+                        </div>
+                        <div className="country-currency">
+                          {country.currency}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Account & Lists */}
+          <div
+            className="header-item account"
+            onMouseEnter={() => setShowAccountMenu(true)}
+            onMouseLeave={() => setShowAccountMenu(false)}
+          >
             <div className="account-top">
-              <div className="hello-text">Hello, sign in</div>
+              <div className="hello-text">
+                {user ? `Hello, ${user.name || "User"}` : "Hello, sign in"}
+              </div>
               <div className="account-text">Account & Lists</div>
             </div>
+
             {showAccountMenu && (
               <div className="account-menu">
-                <div className="menu-section">
-                  <h3>Your Lists</h3>
-                  <ul>
-                    <li>Create a List</li>
-                    <li>Find a List or Registry</li>
-                  </ul>
+                <div className="menu-top-section">
+                  {user ? (
+                    <>
+                      <div className="welcome-message">
+                        <h3>Welcome back!</h3>
+                        <p>{user.email || "Manage your account and orders"}</p>
+                      </div>
+
+                      {enableOrderTracking && recentOrders.length > 0 && (
+                        <div className="recent-orders">
+                          <h4>Recent Orders</h4>
+                          {recentOrders.slice(0, 3).map((order) => (
+                            <div
+                              key={order.id}
+                              className="order-item"
+                              onClick={handleTrackPackage}
+                            >
+                              <div className="order-product">
+                                {order.product}
+                              </div>
+                              <div
+                                className={`order-status ${order.status?.toLowerCase()}`}
+                              >
+                                {order.status}
+                              </div>
+                              <div className="order-date">{order.date}</div>
+                            </div>
+                          ))}
+                          <button
+                            className="view-all-orders"
+                            onClick={handleViewOrderHistory}
+                          >
+                            View all orders →
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="sign-in-section">
+                      <button className="sign-in-button" onClick={handleSignIn}>
+                        Sign in
+                      </button>
+                      <p className="sign-in-text">
+                        New customer? <a href="/register">Start here.</a>
+                      </p>
+                    </div>
+                  )}
                 </div>
-                <div className="menu-section">
-                  <h3>Your Account</h3>
-                  <ul>
-                    <li>Account</li>
-                    <li>Orders</li>
-                    <li>Recommendations</li>
-                    <li>Browsing History</li>
-                  </ul>
+
+                <div className="menu-sections">
+                  <div className="menu-section">
+                    <h3>Your Lists</h3>
+                    <ul>
+                      <li>Create a List</li>
+                      <li>Find a List or Registry</li>
+                      <li>AmazonSmile Charity Lists</li>
+                    </ul>
+                  </div>
+
+                  <div className="menu-section">
+                    <h3>Your Account</h3>
+                    <ul>
+                      {accountMenuItems.map((item, index) => (
+                        <li
+                          key={index}
+                          onClick={item.action}
+                          className={
+                            item.isSignOut || item.isSignIn ? "highlighted" : ""
+                          }
+                        >
+                          {item.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="menu-bottom">
+                  <div className="todays-date">{getFormattedDate()}</div>
+                  {todaysDeals.length > 0 && (
+                    <div className="todays-deals-preview">
+                      <h4>Today's Deals</h4>
+                      {todaysDeals.slice(0, 2).map((deal) => (
+                        <div key={deal.id} className="deal-item">
+                          <span className="deal-title">{deal.title}</span>
+                          <span className="deal-discount">{deal.discount}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             )}
           </div>
 
-          <div className="header-item returns">
+          {/* Returns & Orders */}
+          <div className="header-item returns" onClick={handleViewOrderHistory}>
             <div className="returns-top">Returns</div>
             <div className="returns-bottom">& Orders</div>
           </div>
 
-          <div className="header-item cart">
-            <div className="cart-icon">
-              <i className="cart-symbol">🛒</i>
-              <span className="cart-count">0</span>
-            </div>
-            <div className="cart-text">Cart</div>
+          {/* Cart */}
+          <div className="header-item cart" onClick={handleViewCart}>
+            <a
+              href="/cart"
+              className="cart-link"
+              onClick={(e) => e.preventDefault()}
+            >
+              <div className="cart-icon">
+                <i className="cart-symbol">🛒</i>
+                {cartCount > 0 && (
+                  <span className="cart-count">{cartCount}</span>
+                )}
+              </div>
+              <div className="cart-text">Cart</div>
+            </a>
           </div>
         </div>
       </div>
@@ -272,34 +451,78 @@ const AmazonHeader = () => {
       {/* Bottom Row - Navigation */}
       <div className="header-bottom">
         <nav className="main-nav">
-          <div className="nav-item all-menu">
+          <div
+            className="nav-item all-menu"
+            onMouseEnter={() => setShowAllMenu(true)}
+            onMouseLeave={() => setShowAllMenu(false)}
+          >
             <i className="menu-icon">☰</i>
             <span>All</span>
+
+            {showAllMenu && (
+              <div className="all-menu-dropdown">
+                <div className="menu-column">
+                  <h4>Trending</h4>
+                  <ul>
+                    <li>Best Sellers</li>
+                    <li>New Releases</li>
+                    <li>Movers & Shakers</li>
+                  </ul>
+                </div>
+                <div className="menu-column">
+                  <h4>Digital Content & Devices</h4>
+                  <ul>
+                    <li>Amazon Music</li>
+                    <li>Echo & Alexa</li>
+                    <li>Fire TV</li>
+                    <li>Kindle E-readers & Books</li>
+                  </ul>
+                </div>
+                <div className="menu-column">
+                  <h4>Shop By Category</h4>
+                  <ul>
+                    <li>Electronics</li>
+                    <li>Computers</li>
+                    <li>Smart Home</li>
+                    <li>Arts & Crafts</li>
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
-          
-          {[
-            'Today\'s Deals',
-            'Customer Service',
-            'Registry',
-            'Gift Cards',
-            'Sell',
-            'Electronics'
-          ].map((item, index) => (
+
+          {navItems.map((item, index) => (
             <div key={index} className="nav-item">
               {item}
             </div>
           ))}
-          
-          <div className="nav-item prime-deal">
-            <div className="prime-text">
-              Prime Day deals
-              <span className="prime-badge">Prime</span>
+
+          {enablePrimeFeatures && (
+            <div className="nav-item prime-deal">
+              <div className="prime-text">
+                Prime Early Access
+                <span className="prime-badge">Prime</span>
+              </div>
             </div>
-          </div>
+          )}
         </nav>
       </div>
     </header>
   );
+};
+
+// Default props
+AmazonHeader.defaultProps = {
+  user: null,
+  cartItems: [],
+  recentOrders: [],
+  todaysDeals: [],
+  countries: [],
+  selectedCountry: "US",
+  enableLanguageSelector: true,
+  enableOrderTracking: true,
+  enablePrimeFeatures: true,
+  currentDate: new Date(),
 };
 
 export default AmazonHeader;
