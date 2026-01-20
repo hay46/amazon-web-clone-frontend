@@ -1,272 +1,449 @@
-/* Header.css */
-
-/* Main header container - you'll need to wrap your sections in this */
-.amazon-header-container {
-  display: flex;
-  align-items: center;
+/* Amazon Header Styles */
+.amazon-header {
   background-color: #131921;
-  padding: 0.5rem 1rem;
   color: white;
-  min-height: 60px;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Amazon Logo Section */
+/* Top Row */
+.header-top {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+/* Left Section */
+.header-left {
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+}
+
+.logo-container {
+  margin-right: 20px;
+}
+
 .amazon-logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 5px 8px;
+  border: 1px solid transparent;
+  border-radius: 3px;
 }
 
-.amazon-logo img.amzon-icon {
-  width: 100px;
-  height: auto;
-  padding-top: 10px;
-  object-fit: contain;
-}
-
-.amazon-logo a:hover {
-  border: 70px solid white;
-  border-radius: 30px;
-}
-
-/* Location/Delivery Section */
-.loction-delivery-ethiopia-amazon {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-}
-
-.delivery-to-ethiopia {
-  font-size: 0.75rem;
-  color: #cccccc;
-  font-weight: 400;
-  margin: 0;
-  line-height: 1;
-}
-
-.delivery-ethiopaia-for-amazon {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.delivery-ethiopaia-for-amazon h3 {
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-.delivery-ethiopaia-for-amazon h1.ethiooian-delivery {
-  font-size: 0.875rem;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1;
-}
-
-.loction-delivery-ethiopia-amazon:hover {
+.amazon-logo:hover {
   border: 1px solid white;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff9900;
+}
+
+.logo-domain {
+  font-size: 12px;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 3px;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid transparent;
   border-radius: 3px;
   cursor: pointer;
 }
 
-/* Search/Department Section */
-.All-department {
-  flex: 1;
-  min-width: 300px;
-  max-width: 800px;
+.location-container:hover {
+  border: 1px solid white;
 }
 
-.the-all-departement-and-the-input {
+.location-icon {
+  margin-right: 5px;
+}
+
+.location-pin {
+  display: inline-block;
+  width: 15px;
+  height: 18px;
+  background: linear-gradient(to bottom, #ff9900 50%, transparent 50%);
+  border: 1px solid white;
+  border-radius: 2px;
+  position: relative;
+}
+
+.location-pin:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid #ff9900;
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.deliver-to {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.country {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Center Section - Search */
+.header-center {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 20px;
+}
+
+.search-form {
   display: flex;
   height: 40px;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.All-choose-department {
+.search-category {
   background-color: #f3f3f3;
   border: none;
   border-right: 1px solid #cdcdcd;
-  padding: 0 0.75rem;
-  font-size: 0.75rem;
-  color: #555;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  cursor: pointer;
-  width: 50px;
-  min-width: 50px;
 }
 
-.input-search-Amazon- {
-  display: flex;
-  flex: 1;
-  position: relative;
-}
-
-.input-search-amazon {
-  flex: 1;
+.category-select {
+  height: 100%;
+  padding: 0 10px;
   border: none;
-  padding: 0 0.5rem;
-  font-size: 1rem;
-  width: 100%;
+  background-color: #f3f3f3;
+  color: #555;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
 }
 
-.input-search-amazon:focus {
-  outline: 3px solid #ff9900;
-  outline-offset: -3px;
+.search-input {
+  flex: 1;
+  padding: 0 15px;
+  border: none;
+  font-size: 15px;
+  outline: none;
 }
 
-.search-icon-button {
+.search-button {
+  width: 45px;
   background-color: #febd69;
   border: none;
-  width: 45px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
 }
 
-.search-icon-button:hover {
+.search-button:hover {
   background-color: #f3a847;
 }
 
-.search-icon-button h2 {
+.search-icon {
+  font-size: 20px;
+  color: #333;
+}
+
+/* Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  justify-content: flex-end;
+}
+
+.header-item {
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+.header-item:hover {
+  border: 1px solid white;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.language-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.hello-text {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.account-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.account-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  width: 250px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1001;
+  padding: 15px;
+}
+
+.menu-section {
+  margin-bottom: 15px;
+}
+
+.menu-section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
+}
+
+.menu-section li {
+  padding: 5px 0;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.menu-section li:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+.returns {
+  display: flex;
+  flex-direction: column;
+}
+
+.returns-top {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.returns-bottom {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  position: relative;
+  margin-right: 5px;
+}
+
+.cart-symbol {
+  font-size: 28px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff9900;
+  color: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #131921;
-  font-size: 1.25rem;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-/* Language Option Section */
-.languge-option {
+.cart-text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Bottom Row - Navigation */
+.header-bottom {
+  background-color: #232f3e;
+  padding: 0 20px;
+  height: 40px;
   display: flex;
   align-items: center;
-  position: relative;
-  padding: 0.5rem;
 }
 
-.languge-option > a {
+.main-nav {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  text-decoration: none;
-  color: white;
-  padding: 0.25rem;
+  height: 100%;
 }
 
-.languge-opration {
-  font-weight: 700;
-  font-size: 0.875rem;
-}
-
-.language-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  color: black;
-  min-width: 200px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  border-radius: 4px;
-  z-index: 1000;
-  padding: 1rem;
-  margin-top: 0.25rem;
-}
-
-.languge-option:hover .language-dropdown-menu {
-  display: block;
-}
-
-.languge-option:hover {
-  border: 1px solid white;
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
   border-radius: 3px;
-  cursor: pointer;
+  margin-right: 5px;
+  height: 30px;
 }
 
-.dropdown-item {
-  padding: 0.5rem 0;
+.nav-item:hover {
+  border: 1px solid white;
 }
 
-.dropdown-item select {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: white;
+.all-menu {
+  font-weight: bold;
 }
 
-.language-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0 0;
+.menu-icon {
+  margin-right: 5px;
+  font-size: 18px;
 }
 
-.language-list option {
-  padding: 0.5rem;
+.prime-deal {
+  background-color: #ff9900;
+  border-radius: 3px;
+  font-weight: bold;
+  color: black;
+}
+
+.prime-deal:hover {
+  border: 1px solid #ff9900;
+}
+
+.prime-text {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
 }
 
-.language-list li {
-  padding: 0.25rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.prime-badge {
+  background-color: #146eb4;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+  font-weight: normal;
 }
 
-.language-list input[type="checkbox"] {
-  margin-right: 0.5rem;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
-  .amazon-header-container {
-    gap: 1rem;
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .header-right {
+    min-width: 250px;
   }
   
-  .All-department {
-    min-width: 250px;
+  .header-item {
+    padding: 8px 5px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-left {
+    min-width: 150px;
+  }
+  
+  .location-text {
+    display: none;
+  }
+  
+  .language-text {
+    display: none;
+  }
+  
+  .account-text {
+    font-size: 12px;
+  }
+  
+  .returns-bottom {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 768px) {
-  .amazon-header-container {
-    justify-content: space-between;
-    padding: 0.5rem;
+  .header-top {
+    flex-wrap: wrap;
+    height: auto;
   }
   
-  .loction-delivery-ethiopia-amazon,
-  .languge-option {
-    display: none;
-  }
-  
-  .All-department {
+  .header-left {
+    order: 1;
     flex: 1;
-    margin: 0 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .amazon-logo img.amzon-icon {
-    width: 80px;
   }
   
-  .All-department {
-    min-width: 200px;
+  .header-center {
+    order: 3;
+    flex: 100%;
+    margin: 10px 0;
   }
   
-  .All-choose-department {
-    width: 40px;
-    min-width: 40px;
-    font-size: 0.7rem;
-    padding: 0 0.5rem;
+  .header-right {
+    order: 2;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  
+  .header-bottom {
+    overflow-x: auto;
+    padding: 0 10px;
+  }
+  
+  .main-nav {
+    min-width: 600px;
   }
 }
