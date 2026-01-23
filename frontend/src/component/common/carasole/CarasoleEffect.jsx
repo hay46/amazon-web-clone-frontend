@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-//import { imge } from "../carasole/imge/data.js"
+import { imge } from "../carasole/imge/data.js"
 import "./CarasoleEffect.css"; 
 
 function CarasoleEffect() {
