@@ -2,7 +2,7 @@ import React from 'react'
 import './CardInfos.css'
 import {CardinformationData} from './CardinformationData.js'
 function CardInfos ({data}) {
-    console.log(data.imageLink);
+   // console.log(data.imageLink);
   return (
     <div className="card-information">
       <a href="">
