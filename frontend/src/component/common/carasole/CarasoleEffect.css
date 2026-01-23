@@ -23,11 +23,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200px;
+  height: 250px; /* ትንሽ ከፍ አድርገው */
+  /* ቀለሙን ወደ ነጭ/ግራጫ ቀይረው (Fade to background) */
   background: linear-gradient(to bottom, 
     transparent 0%, 
-    rgba(0, 0, 0, 0.3) 40%, 
-    rgba(0, 0, 0, 0.7) 100%);
+    rgba(234, 237, 237, 0.5) 50%, 
+    rgba(234, 237, 237, 1) 100%);
   pointer-events: none;
   z-index: 1;
 }

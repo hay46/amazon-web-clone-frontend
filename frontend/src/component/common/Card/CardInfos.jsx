@@ -1,17 +1,22 @@
 import React from 'react'
 import './CardInfos.css'
 import {CardinformationData} from './CardinformationData.js'
-function CardInfos(data) {
+function CardInfos ({data}) {
+    console.log(data.imageLink);
   return (
     <div className="card-information">
       <a href="">
-        <span className="card-img">{data.title}</span>
-        <img src={data.img} alt="" />
-        <p className="img-discription">{data.description}</p>
-        <p className="showping know">shopping Know</p>
+        <h1>{data.id}</h1>
+        <span className="card-img">
+          <h1>{data.title}</h1>
+        </span>
+        <img src={data.imageLink} alt={data.title} />
+        <p className="img-description">{data.description}</p>
+        <p className="shopping know">shopping Know</p>
       </a>
+      
     </div>
   );
 }
 
-export default CardInfos
+export default CardInfos;
