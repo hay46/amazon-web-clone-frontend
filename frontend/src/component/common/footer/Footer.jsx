@@ -4,12 +4,12 @@ const Footer = () => {
   return (
     <div>
       <footer>
-        <a href="#top" class="footer-back-to-top">
+        <a href="#top" className="footer-back-to-top">
           Back to top
         </a>
 
-        <div class="footer-main">
-          <div class="footer-column">
+        <div className="footer-main">
+          <div className="footer-column">
             <h3>Get to Know Us</h3>
             <ul>
               <li>
@@ -29,7 +29,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div class="footer-column">
+          <div className="footer-column">
             <h3>Make Money with Us</h3>
             <ul>
               <li>
@@ -49,7 +49,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div class="footer-column">
+          <div className="footer-column">
             <h3>Amazon Payment Products</h3>
             <ul>
               <li>
@@ -66,7 +66,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div class="footer-column">
+          <div className="footer-column">
             <h3>Let Us Help You</h3>
             <ul>
               <li>
@@ -88,27 +88,27 @@ const Footer = () => {
           </div>
         </div>
 
-        <div class="footer-bottom-nav">
-          <div class="footer-logo-area">
+        <div className="footer-bottom-nav">
+          <div className="footer-logo-area">
             <img
               src="amazon_logo_white.png"
               alt="Amazon Logo"
-              class="footer-logo"
+              className="footer-logo"
             />
-            <div class="footer-selector">🌐 English</div>
-            <div class="footer-selector">🇺🇸 United States</div>
+            <div className="footer-selector">🌐 English</div>
+            <div className="footer-selector">🇺🇸 United States</div>
           </div>
         </div>
 
-        <div class="footer-global-links">
+        <div className="footer-global-links">
           <a href="#">Amazon Web Services</a>
           <a href="#">Audible</a>
           <a href="#">IMDb</a>
-          <p class="footer-copyright">
+          <p className="footer-copyright">
             <a href="#">Conditions of Use</a>
             <a href="#">Privacy Notice</a>
             <a href="#">Your Ads Privacy Choices</a>
-            <span class="copyright-year">
+            <span className="copyright-year">
               © 1996-2025, Amazon.com, Inc. or its affiliates
             </span>
           </p>
