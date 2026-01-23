@@ -32,25 +32,7 @@
   z-index: 1;
 }
 
-/* Adjust slick dots to appear above gradient */
-.slick-dots {
-  position: absolute;
-  bottom: 20px;
-  z-index: 2;
+/* Remove indicator dots */
+.carousel-container .slick-dots {
+  display: none;
 }
-
-.slick-dots li button:before {
-  color: white;
-  opacity: 0.5;
-}
-
-.slick-dots li.slick-active button:before {
-  color: white;
-  opacity: 1;
-}
-
-
-
-
-
-
