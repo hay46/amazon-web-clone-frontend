@@ -2,15 +2,15 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { imge } from "../carasole/imge/data.js"
-import "./CarasoleEffect.css"; 
+import { imge } from "../carasole/imge/data.js";
+import "./CarasoleEffect.css";
 
 function CarasoleEffect() {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2, // በአንድ ጊዜ 2 ምስል እንዲታይ አድርገሃል
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -23,7 +23,7 @@ function CarasoleEffect() {
           <div className="slide-container" key={index}>
             <img
               src={imageItemsLink}
-              alt={`slide-${index}`}
+              alt={`Amazon Hero Slide ${index + 1}`} 
               className="carousel-image"
             />
             <div className="gradient-overlay"></div>
