@@ -1,42 +1,125 @@
 import React, { useState, useEffect } from "react";
 import "./prodact.css";
 import ProdactCard from "./ProdactCard.jsx";
-import axios from "axios";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Call your local server, NOT the Amazon API directly
-    axios.get("http://localhost:5000/api/amazon-products")
-        .then((res) => res.json())
-        .then((data) => {
-            setProducts(data);
-            setLoading(false);
-        })
-        .catch((err) => console.error("Error fetching products:", err));
-    }, []);
+    // እውነተኛ API ከመጥራት ይልቅ የውሸት ዳታ እዚህ እናስቀምጣለን
+    const mockData = [
+      {
+        ASIN: "B08N5KWB9H",
+        ItemInfo: {
+          Title: {
+            DisplayValue:
+              "Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display",
+          },
+        },
+        Images: {
+          Primary: {
+            Large: {
+              URL: "https://m.media-amazon.com/images/I/71vFKBpKakL._AC_SL1500_.jpg",
+            },
+          },
+        },
+        Offers: { Listings: [{ Price: { DisplayAmount: "$999.00" } }] },
+        DetailPageURL: "https://www.amazon.com/dp/B08N5KWB9H",
+      },
+      {
+        ASIN: "B09G96TFF7",
+        ItemInfo: {
+          Title: {
+            DisplayValue:
+              "iPad Mini (6th Generation): A15 Bionic chip, 8.3-inch",
+          },
+        },
+        Images: {
+          Primary: {
+            Large: {
+              URL: "https://m.media-amazon.com/images/I/71Y-9-8lSXL._AC_SL1500_.jpg",
+            },
+          },
+        },
+        Offers: { Listings: [{ Price: { DisplayAmount: "$499.00" } }] },
+        DetailPageURL: "https://www.amazon.com/dp/B09G96TFF7",
+      },
+      {
+        ASIN: "B08L5VJYV7",
+        ItemInfo: {
+          Title: {
+            DisplayValue: "Apple iPhone 12, 64GB, Black - Fully Unlocked",
+          },
+        },
+        Images: {
+          Primary: {
+            Large: {
+              URL: "https://m.media-amazon.com/images/I/71fJ-gmBZtL._AC_SL1500_.jpg",
+            },
+          },
+        },
+        Offers: { Listings: [{ Price: { DisplayAmount: "$345.00" } }] },
+        DetailPageURL: "https://www.amazon.com/dp/B08L5VJYV7",
+      },
+      {
+        ASIN: "B07ZPKZSSC",
+        ItemInfo: {
+          Title: {
+            DisplayValue:
+              "Apple AirPods Pro (1st Generation) with MagSafe Case",
+          },
+        },
+        Images: {
+          Primary: {
+            Large: {
+              URL: "https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SL1500_.jpg",
+            },
+          },
+        },
+        Offers: { Listings: [{ Price: { DisplayAmount: "$174.00" } }] },
+        DetailPageURL: "https://www.amazon.com/dp/B07ZPKZSSC",
+      },
+      {
+        ASIN: "B08PPDL386",
+        ItemInfo: {
+          Title: {
+            DisplayValue: "Apple Watch Series 6 (GPS, 40mm) - Space Gray",
+          },
+        },
+        Images: {
+          Primary: {
+            Large: {
+              URL: "https://m.media-amazon.com/images/I/71fu8fSFrNL._AC_SL1500_.jpg",
+            },
+          },
+        },
+        Offers: { Listings: [{ Price: { DisplayAmount: "$279.00" } }] },
+        DetailPageURL: "https://www.amazon.com/dp/B08PPDL386",
+      },
+    ];
 
-if (loading) return <p>Loading Products...</p>;
- return (
-    <div className="product-grid">
-        {products.map((item) => (
-        <div key={item.ASIN} className="product-card">
-            <img
-            src={item.Images.Primary.Large.URL}
-            alt={item.ItemInfo.Title.DisplayValue}
-            />
-            <h3>{item.ItemInfo.Title.DisplayValue}</h3>
-            <p>{item.Offers.Listings[0].Price.DisplayAmount}</p>
-            <a href={
-            item.DetailPageURL} target="_blank">
-            View on Amazon
-            </a>
-        </div>
-        ))}
-    </div>
+    // ለሙከራ እንዲሆን ለ 1 ሰከንድ Loading እንዲያሳይ እናድርገው
+    setTimeout(() => {
+      setProducts(mockData);
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  if (loading)
+    return (
+      <p style={{ textAlign: "center", marginTop: "20px" }}>
+        Loading Products...
+      </p>
     );
+
+  return (
+    <div className="product-grid">
+      {products.map((singleProduct) => (
+        <ProdactCard key={singleProduct.ASIN} product={singleProduct} />
+      ))}
+    </div>
+  );
 };
+
 export default Product;
-// import React, { useState, useEffect } from 
