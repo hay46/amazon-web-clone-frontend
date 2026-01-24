@@ -5,9 +5,11 @@ import CardInfos from './CardInfos.jsx'
 function Card() {
   return (
     <div className="crad-information-to-maping">
-      {CardinformationData.map((infos) => (
-        <CardInfos key={infos.id} data={infos} /> // እዚህ ጋር return እንዲያደርግ በ () ተተክቷል
-      ))}
+      {
+      CardinformationData.map((info) => (
+        <CardInfos key={info.id} data={info} /> // እዚህ ጋር return እንዲያደርግ በ () ተተክቷል
+      ))
+      }
     </div>
   );
 }
