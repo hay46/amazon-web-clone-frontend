@@ -30,10 +30,10 @@
   margin-top: 18px;
 }
 .header__logo:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   border: 2px solid white;
   border-radius: 5px;
-  margin: 0 18px;
+  margin: 1 18px;
 }
 
 .header__location {
