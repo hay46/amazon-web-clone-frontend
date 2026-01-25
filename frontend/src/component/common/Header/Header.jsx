@@ -1,27 +1,28 @@
 import React from "react";
-import "./Header.css";
-// Note: Consider importing icons from a library like react-icons for the search and cart
+import classes from "./Header.module.css";
 import { BsSearch } from "react-icons/bs";
 import { SlLocationPin } from "react-icons/sl";
 import { BiCart } from "react-icons/bi";
+import LowerHeader from "./LowerHeader";
 
 function Header() {
   return (
-    <section className="header">
+    <div>
+    <section className={classes.header}>
       {/* Top Navigation */}
-      <section className="header__main">
+      <section className={classes.header__main}>
         {/* Logo and Address */}
-        <div className="header__left">
-          <a href="/" className="header__logoLink">
+        <div className={classes.header__left}>
+          <a href="/" className={classes.header__logoLink}>
             <img
-              className="header__logo"
-              src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" // Clean logo version
+              className={classes.header__logo}
+              src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="amazon-logo"
             />
           </a>
-          <a href="/" className="header__location">
-            <SlLocationPin className="header__locationIcon" />
-            <div className="header__locationText">
+          <a href="/" className={classes.header__location}>
+            <SlLocationPin className={classes.header__locationIcon} />
+            <div className={classes.header__locationText}>
               <p>Deliver to</p>
               <span>Ethiopia</span>
             </div>
@@ -29,8 +30,8 @@ function Header() {
         </div>
 
         {/* Search Bar */}
-        <div className="header__search">
-          <select className="header__searchSelect">
+        <div className={classes.header__search}>
+          <select className={classes.header__searchSelect}>
             <option value="all">All</option>
             <option value="art">Art</option>
             <option value="books">Books</option>
@@ -43,24 +44,24 @@ function Header() {
             <option value="sports">Sports</option>
           </select>
           <input
-            className="header__searchInput"
+            className={classes.header__searchInput}
             type="text"
             placeholder="Search Amazon.com"
           />
-          <div className="header__searchIconContainer">
-            <BsSearch className="header__searchIcon" />
+          <div className={classes.header__searchIconContainer}>
+            <BsSearch className={classes.header__searchIcon} />
           </div>
         </div>
 
         {/* Right Side Links */}
-        <div className="header__right">
-          <div className="header__language">
+        <div className={classes.header__right}>
+          <div className={classes.header__language}>
             <img
               src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
               alt="flag"
-              className="header__flag"
+              className={classes.header__flag}
             />
-            <select className="header__langSelect">
+            <select className={classes.header__langSelect}>
               <option value="en">EN</option>
               <option value="am">Am</option>
               <option value="fr">FR</option>
@@ -71,31 +72,39 @@ function Header() {
             </select>
           </div>
 
-          <a href="/login" className="header__link">
-            <div className="header__option">
-              <p className="header__optionLineOne">Hello, Sign In</p>
-              <span className="header__optionLineTwo">Account & Lists</span>
+          <a href="/login" className={classes.header__link}>
+            <div className={classes.header__option}>
+              <p className={classes.header__optionLineOne}>Hello, Sign In</p>
+              <span className={classes.header__optionLineTwo}>
+                Account & Lists
+              </span>
             </div>
           </a>
 
-          <a href="/orders" className="header__link">
-            <div className="header__option">
-              <p className="header__optionLineOne">Returns</p>
-              <span className="header__optionLineTwo">& Orders</span>
+          <a href="/orders" className={classes.header__link}>
+            <div className={classes.header__option}>
+              <p className={classes.header__optionLineOne}>Returns</p>
+              <span className={classes.header__optionLineTwo}>& Orders</span>
             </div>
           </a>
 
-          <a href="/checkout" className="header__link">
-            <div className="header__optionBasket">
-              <BiCart className="header__basketIcon" />
-              <span className="header__optionLineTwo header__basketCount">
+          <a href="/Cart" className={classes.header__link}>
+            <div className={classes.header__optionBasket}>
+              <BiCart className={classes.header__basketIcon} />
+              <span
+                className={`${classes.header__optionLineTwo} ${classes.header__basketCount}`}
+              >
                 0
               </span>
             </div>
           </a>
         </div>
       </section>
+      {/* Lower Navigation */}
+      
     </section>
+    <LowerHeader />
+    </div>
   );
 }
 
