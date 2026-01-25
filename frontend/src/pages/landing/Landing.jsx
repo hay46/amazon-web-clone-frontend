@@ -1,18 +1,18 @@
 import React from 'react'
-import "./landing.css"
+import "./Landing.css"
 import CarasoleEffect from '../../component/common/carasole/CarasoleEffect'
 import Cards from '../../component/common/Card/Card'
-import Prodact from "../../component/common/prodact/Prodact"
+//import Product from "../../component/common/product/Product"
 import Layout from '../../component/Layout/Layout'
 
-function landing() {
+function Landing() {
   return (
     <Layout>
       <CarasoleEffect />
       <Cards />
-      <Prodact />
+      {/* <Product /> */}
     </Layout>
   );
 }
 
-export default landing
+export default Landing;

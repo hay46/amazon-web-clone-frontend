@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./prodact.css";
-import ProdactCard from "./ProdactCard.jsx";
+import "./product.css";
+import ProductCard from "./ProductCard.jsx";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -116,7 +116,7 @@ const Product = () => {
   return (
     <div className="product-grid">
       {products.map((singleProduct) => (
-        <ProdactCard key={singleProduct.ASIN} product={singleProduct} />
+        <ProductCard key={singleProduct.ASIN} product={singleProduct} />
       ))}
     </div>
   );

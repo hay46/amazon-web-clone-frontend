@@ -4,7 +4,7 @@ import Header from '../common/Header/Header'
 function Layout({children}) {
   return (
     <div>
-      <Header />
+       <Header /> 
       {children}
     </div>
   );
