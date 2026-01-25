@@ -6,6 +6,7 @@ import Payment from "./pages/payment/Payment";
 import Order from "./pages/orderspage/Order";
 import Result from "./pages/Result/Result";
 import Landing from "./pages/landing/landing";
+
 function Routering() {
   return (
     <Router>
