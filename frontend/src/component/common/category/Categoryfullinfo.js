@@ -13,7 +13,7 @@ export const Categoryinfo = [
     },
     {
         id: 3,
-        title: "Home & Kitchen",
+        title: "Kitchen",
         description: "Find everything you need for your home and kitchen, from appliances to decor.",
         imageLink: "https://m.media-amazon.com/images/I/21B-NkA9p-L._SY150_.jpg",
     },
@@ -21,7 +21,7 @@ export const Categoryinfo = [
     
     {
         id: 7,
-        title: "Health & Personal Care",
+        title: "Health Care",
         description: "Explore a variety of health and personal care products to keep you feeling your best.",
         imageLink: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/DskBTFQuadCards/Fuji_BTF_Quad_Cards_2x_Kitchen._SY232_CB558654384_.jpg",
     },

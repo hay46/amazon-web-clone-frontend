@@ -10,7 +10,6 @@ function Routering() {
   return (
     <Router>
       <Routes>
-        
         <Route path="/" element={<Landing />} />
         <Route path="/product/:id" element={<ProductDetil />} />
         <Route path="/cart" element={<Cart />} />
@@ -18,7 +17,6 @@ function Routering() {
         <Route path="/orders" element={<Order />} />
         <Route path="/search/:query" element={<Result />} />
         <Route path="/category/:id" element={<Result />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>
   );

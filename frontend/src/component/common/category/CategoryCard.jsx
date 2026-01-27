@@ -9,7 +9,7 @@ function CategoryCard(data ) {
     <div className="category-card-container">
       {" "}
       {/* Class ጨምረናል */}
-      <Link to={`/category/${data.id}`} className="category-card-link">
+      <Link to={`/category/${data.title}`} className="category-card-link">
 
         <span>
           <h2>{data.title}</h2>
