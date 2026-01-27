@@ -4,9 +4,8 @@ import ProductDetil from "./pages/productDetil/ProductDetil"; // እዚህ ጋ�
 import Cart from "./pages/cart/Cart";
 import Payment from "./pages/payment/Payment";
 import Order from "./pages/orderspage/Order";
-import Result from "./pages/Result/Result";
+import Result from "./pages/result/Result";
 import Landing from "./pages/landing/landing";
-
 function Routering() {
   return (
     <Router>
@@ -18,6 +17,8 @@ function Routering() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/orders" element={<Order />} />
         <Route path="/search/:query" element={<Result />} />
+        <Route path="/category/:id" element={<Result />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>
   );

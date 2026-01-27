@@ -1,16 +1,18 @@
 import React from 'react'
 import "./Landing.css"
 import CarasoleEffect from '../../component/common/carasole/CarasoleEffect'
+import Category from '../../component/common/category/Category'
 import Cards from '../../component/common/Card/Card'
-//import Product from "../../component/common/product/Product"
+import Product from "../../component/common/product/Product"
 import Layout from '../../component/Layout/Layout'
 
 function Landing() {
   return (
     <Layout>
       <CarasoleEffect />
-      <Cards />
-      {/* <Product /> */}
+      <Category />
+      *<Cards />
+       <Product /> 
     </Layout>
   );
 }

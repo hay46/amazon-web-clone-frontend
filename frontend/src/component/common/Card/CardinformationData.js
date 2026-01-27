@@ -27,6 +27,7 @@ export const CardinformationData = [
     imageLink:
       "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/HomeStorage_2x._SY232_CB563137408_.jpg",
   },
+
   {
     id: 5,
     title: "Card Title 3",
